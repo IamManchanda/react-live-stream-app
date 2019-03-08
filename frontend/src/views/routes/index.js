@@ -8,8 +8,8 @@ const Routes = () => <Fragment>
     <div className="cell">
       <BrowserRouter>
         <Fragment>
-          { routesData.map(({ path, component }, index) => <Route
-              exact key={ index } path={ path } component={ component }
+          { routesData.map(({ id, path, component }) => <Route
+              exact key={ id } path={ path } component={ component }
             /> ) }
         </Fragment>
       </BrowserRouter>
