@@ -1,19 +1,11 @@
 import React, { Fragment } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
-import routes from './routes';
+
+import NavigationHeader from './navigations/header';
+import Routes from './routes';
 
 const App = () => <Fragment>
-  <h1>Header</h1>
-  <BrowserRouter>
-    <Fragment>
-      { routes.map(({ path, component }, index) => <Route
-          exact
-          key={ index }
-          path={ path }
-          component={ component }
-        /> ) }
-    </Fragment>
-  </BrowserRouter>
+  <NavigationHeader />
+  <Routes />
 </Fragment>;
 
 export default App;
