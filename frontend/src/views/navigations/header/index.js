@@ -1,6 +1,7 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const NavigationHeader = () => <Fragment>
+const NavigationHeader = () => 
   <div className="top-bar shadow">
     <div className="top-bar-left">
       <ul className="dropdown menu">
@@ -9,10 +10,9 @@ const NavigationHeader = () => <Fragment>
     </div>
     <div className="top-bar-right">
       <ul className="menu">
-        <li></li>
+        <li><Link to="/">All Streams</Link></li>
       </ul>
     </div>
-  </div>
-</Fragment>;
+  </div>;
 
 export default NavigationHeader;

@@ -1,4 +1,4 @@
-import uuid from "uuid";
+import uuid from 'uuid';
 
 import StreamList from '../pages/streams/list';
 import StreamCreate from '../pages/streams/create';
