@@ -10,31 +10,31 @@ const routesData = [
   {
     id: uuid.v4(),
     path: '/',
-    component: StreamList,
+    page: StreamList,
     extraProps: {},
   },
   {
     id: uuid.v4(),
     path: '/streams/new',
-    component: StreamCreate,
+    page: StreamCreate,
     extraProps: {},
   },
   {
     id: uuid.v4(),
     path: '/streams/edit',
-    component: StreamEdit,
+    page: StreamEdit,
     extraProps: {},
   },
   {
     id: uuid.v4(),
     path: '/streams/delete',
-    component: StreamDelete,
+    page: StreamDelete,
     extraProps: {},
   },
   {
     id: uuid.v4(),
     path: '/streams/show',
-    component: StreamShow,
+    page: StreamShow,
     extraProps: {},
   },
 ];
