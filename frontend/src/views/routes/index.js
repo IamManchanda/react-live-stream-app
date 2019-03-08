@@ -6,8 +6,9 @@ import routesData from './data';
 const Routes = () => 
   <div className="grid-x grid-padding-x grid-padding-y">
     <div className="cell">
-      { routesData.map(({ id, path, component }) => 
-          <Route exact key={ id } path={ path } component={ component } /> ) }
+      { routesData.map(({ id, path, component: DynRouteComponent, extraProps = {} }) =>
+          <Route exact key={ id } path={ path } render={ (props = {}) => 
+            <DynRouteComponent { ...props } { ...extraProps } /> } /> ) }
     </div>
   </div>;
 
