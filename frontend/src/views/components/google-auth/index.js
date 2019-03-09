@@ -22,7 +22,8 @@ const GoogleAuth = class extends Component {
 
   handleAuthChange = (currentState) => {
     const { handleSignIn, handleSignOut } = this.props;
-    (currentState) ? handleSignIn() : handleSignOut();
+    const userId = this.auth.currentUser.get().getId();
+    (currentState) ? handleSignIn(userId) : handleSignOut();
   };
 
   handleAuthState(currentState) {
