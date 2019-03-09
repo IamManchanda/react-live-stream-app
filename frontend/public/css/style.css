@@ -1,5 +1,6 @@
 .button.social {
   margin: .25rem;
+  padding: 0;
 }
 
 .button.social.google {
@@ -10,6 +11,31 @@
 .button.social.google:hover, .button.social.google:focus {
   background-color: #0073e6;
   color: #fefefe;
+}
+
+.button.social.google > .google-icon,
+.button.social.google > .google-text {
+  display: inline-block;
+  vertical-align: middle;
+  padding: .625rem;
+}
+
+.button.social.google > .google-icon {
+  margin: 0 1rem 0 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  box-sizing: border-box;
+  background-color: #fefefe;
+  border: 2px solid #3399ff;
+}
+
+.button.social.google:hover >  .google-icon, 
+.button.social.google:focus > .google-icon {
+  border: 2px solid #0073e6;
+}
+
+.button.social.google > .google-text {
+  margin-right: 1rem;
 }
 
 .button.radius.social {
