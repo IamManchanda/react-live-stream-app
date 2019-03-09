@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-import routesData from './data';
+import routesData from './routesData';
 
 const Routes = () => 
   <div className="grid-x grid-padding-x grid-padding-y">

@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import googleCredentials from '../../../config/google';
+import { handleSignIn, handleSignOut } from '../../../store/actions';
 
 const GoogleAuth = class extends Component {
-  state = {
-    hasSignedInState: null,
-  };
-
   componentDidMount() {
     window.gapi.load('client:auth2', () => {
       const { clientId } = googleCredentials;
@@ -16,15 +14,15 @@ const GoogleAuth = class extends Component {
         .then(() => {
           this.auth = window.gapi.auth2.getAuthInstance();
           const { isSignedIn } = this.auth;
-          this.handleAuthChange();
+          this.handleAuthChange(isSignedIn.get());
           isSignedIn.listen(this.handleAuthChange);
         });
     });
   }
 
-  handleAuthChange = () => {
-    const hasSignedInState = this.auth.isSignedIn.get();
-    this.setState({ hasSignedInState });
+  handleAuthChange = (currentState) => {
+    const { handleSignIn, handleSignOut } = this.props;
+    (currentState) ? handleSignIn() : handleSignOut();
   };
 
   handleAuthState(currentState) {
@@ -32,7 +30,7 @@ const GoogleAuth = class extends Component {
   }
 
   render() {
-    const { hasSignedInState } = this.state;
+    const { hasSignedInState } = this.props;
     if (hasSignedInState === null) return null;
     return (
       <button 
@@ -53,4 +51,7 @@ const GoogleAuth = class extends Component {
   }
 };
 
-export default GoogleAuth;
+export default connect(
+  ({ authReducer: { hasSignedInState } = {} }) => ({ hasSignedInState }),
+  { handleSignIn, handleSignOut }
+)(GoogleAuth);
