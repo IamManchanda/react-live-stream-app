@@ -1,0 +1,17 @@
+.button.social {
+  margin: .25rem;
+}
+
+.button.social.google {
+  background-color: #3399ff;
+  color: #fefefe;
+}
+
+.button.social.google:hover, .button.social.google:focus {
+  background-color: #0073e6;
+  color: #fefefe;
+}
+
+.button.radius.social {
+  border-radius: 0.25rem;
+}
