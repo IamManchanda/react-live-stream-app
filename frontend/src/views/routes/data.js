@@ -8,35 +8,32 @@ import StreamShow from '../pages/streams/show';
 
 const routesData = [
   {
-    id: uuid.v4(),
     path: '/',
     page: StreamList,
     extraProps: {},
   },
   {
-    id: uuid.v4(),
     path: '/streams/new',
     page: StreamCreate,
     extraProps: {},
   },
   {
-    id: uuid.v4(),
     path: '/streams/edit',
     page: StreamEdit,
     extraProps: {},
   },
   {
-    id: uuid.v4(),
     path: '/streams/delete',
     page: StreamDelete,
     extraProps: {},
   },
   {
-    id: uuid.v4(),
     path: '/streams/show',
     page: StreamShow,
     extraProps: {},
   },
 ];
+
+routesData.forEach(item => item.id = uuid.v4());
 
 export default routesData;
