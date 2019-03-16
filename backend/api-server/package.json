@@ -1,0 +1,10 @@
+{
+  "name": "api-server",
+  "version": "1.0.0",
+  "description": "API Server for live stream app in react",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

@@ -1,6 +1,7 @@
 {
   "name": "frontend",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "Client Server for live stream app in react",
   "private": true,
   "dependencies": {
     "@babel/core": "7.2.2",
