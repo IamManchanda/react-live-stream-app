@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import googleCredentials from '../../../config/google';
+import googleCredentials from '../../../../auth-config/google';
 import { handleSignIn, handleSignOut } from '../../../store/actions';
 
 const GoogleAuth = class extends Component {
