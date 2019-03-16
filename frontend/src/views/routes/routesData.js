@@ -10,30 +10,32 @@ const routesData = [
   {
     path: '/',
     page: StreamList,
-    extraProps: {},
+    ownProps: {},
   },
   {
     path: '/streams/create',
     page: StreamCreate,
-    extraProps: {},
+    ownProps: {},
   },
   {
     path: '/streams/edit',
     page: StreamEdit,
-    extraProps: {},
+    ownProps: {},
   },
   {
     path: '/streams/delete',
     page: StreamDelete,
-    extraProps: {},
+    ownProps: {},
   },
   {
     path: '/streams/show',
     page: StreamShow,
-    extraProps: {},
+    ownProps: {},
   },
 ];
 
-routesData.forEach(item => item.id = uuid.v4());
+routesData.forEach((item) => {
+  item.id = uuid.v4();
+});
 
 export default routesData;

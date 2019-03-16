@@ -52,6 +52,10 @@ const GoogleAuth = class extends Component {
   }
 };
 
+GoogleAuth.defaultProps = {
+  hasSignedInState: null,
+};
+
 export default connect(
   ({ auth: { hasSignedInState } = {} }) => ({ hasSignedInState }),
   { handleSignIn, handleSignOut }
