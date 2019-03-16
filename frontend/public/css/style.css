@@ -21,7 +21,7 @@
 }
 
 .button.social.google > .google-icon {
-  margin: 0 1rem 0 0;
+  margin: 0 0.5rem 0 0;
   width: 2.5rem;
   height: 2.5rem;
   box-sizing: border-box;
@@ -35,7 +35,7 @@
 }
 
 .button.social.google > .google-text {
-  margin-right: 1rem;
+  margin-right: 0.5rem;
 }
 
 .button.radius.social {
