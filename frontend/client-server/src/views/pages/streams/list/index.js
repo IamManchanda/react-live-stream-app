@@ -34,11 +34,14 @@ const StreamList = class extends Component {
                     <h4>{ title }</h4>
                     <p>{ description }</p>
                     <div className="button-group">
-                      <button className="secondary radius bordered shadow button">View</button>
-                        { (hasSignedInState && currentUserId === userId) ? <Fragment>
-                            <button className="success radius bordered shadow button">Edit</button>
-                            <button className="alert radius bordered shadow button">Delete</button>
-                          </Fragment> : null }
+                      <Link
+                        type="button" to={ `/streams/${id}` } 
+                        className="secondary radius bordered shadow button">View</Link>
+                      { (hasSignedInState && currentUserId === userId) ? <Fragment>
+                          <Link type="button" to={ `/streams/${id}/edit` } 
+                            className="success radius bordered shadow button">Edit</Link>
+                          <button className="alert radius bordered shadow button">Delete</button>
+                        </Fragment> : null }
                     </div> 
                   </div>
                 </div>

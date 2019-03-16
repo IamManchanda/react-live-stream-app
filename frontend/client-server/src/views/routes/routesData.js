@@ -18,18 +18,18 @@ const routesData = [
     ownProps: {},
   },
   {
-    path: '/streams/edit',
+    path: '/streams/:id',
+    page: StreamShow,
+    ownProps: {},
+  },
+  {
+    path: '/streams/:id/edit/',
     page: StreamEdit,
     ownProps: {},
   },
   {
     path: '/streams/delete',
     page: StreamDelete,
-    ownProps: {},
-  },
-  {
-    path: '/streams/show',
-    page: StreamShow,
     ownProps: {},
   },
 ];
