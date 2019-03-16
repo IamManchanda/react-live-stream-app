@@ -35,7 +35,7 @@ const routesData = [
 ];
 
 routesData.forEach(function iterateRoutesData(item) {
-  item.id = uuid.v4();
+  item.uuid = uuid.v4();
 });
 
 export default routesData;

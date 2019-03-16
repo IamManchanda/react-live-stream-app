@@ -25,7 +25,7 @@ const streamCreationData = [
 ];
 
 streamCreationData.forEach(function iterateStreamCreationData(item) {
-  item.id = uuid.v4();
+  item.uuid = uuid.v4();
 });
 
 export default streamCreationData;
