@@ -5,6 +5,9 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "json-server -p 3005 -w data/db.json"
+  },
+  "dependencies": {
+    "json-server": "^0.14.2"
   }
 }
