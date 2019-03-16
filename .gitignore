@@ -1,11 +1,11 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# Any Folders
+# Ignore these files in any Folders (Wildcard)
 **node_modules
 **npm-debug.log*
 **yarn-debug.log*
 **yarn-error.log*
 
-# Frontend
-/frontend/build
-/frontend/auth-config
+# Frontend - Client Server
+/frontend/client-server/build
+/frontend/client-server/auth-config

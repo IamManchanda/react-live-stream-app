@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "client-server",
   "version": "1.0.0",
   "description": "Client Server for live stream app in react",
   "private": true,
