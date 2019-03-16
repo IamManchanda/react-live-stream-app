@@ -8,6 +8,7 @@ import {
   HANDLE_DELETE_STREAM,
 } from './types';
 import streamsApi from '../../api/streams';
+import history from '../../history';
 
 export const handleSignIn = (userId) => {
   return {
@@ -22,49 +23,50 @@ export const handleSignOut = () => {
   };
 };
 
-export const handleCreateStream = (formValues) => {
-  return async function dispatcherCreateStream(dispatch) {
-    const response = await streamsApi.post('/streams', formValues);
-    const { data: streamsData } = response;
-    dispatch({
-      type: HANDLE_CREATE_STREAM,
-      payload: { streamsData },
-    });
-  };
-};
-
 export const handleFetchStreams = () => async (dispatch) => {
   const response = await streamsApi.get('/streams');
-  const { data: streamsData } = response;
+  const { data } = response;
   dispatch({
     type: HANDLE_FETCH_STREAMS,
-    payload: { streamsData },
+    payload: { data },
   });
 };
 
 export const handleFetchStream = (id) => async (dispatch) => {
   const response = await streamsApi.get(`/streams${id}`);
-  const { data: streamData } = response;
+  const { data } = response;
   dispatch({
     type: HANDLE_FETCH_STREAM,
-    payload: { streamData },
+    payload: { data },
   });
+};
+
+export const handleCreateStream = (formValues) => {
+  return async function dispatcherCreateStream(dispatch, getState) {
+    const { userId } = getState().auth;
+    const response = await streamsApi.post('/streams', { ...formValues, userId });
+    const { data } = response;
+    dispatch({
+      type: HANDLE_CREATE_STREAM,
+      payload: { data },
+    });
+    history.push('/');
+  };
 };
 
 export const handleEditStream = (id, formValues) => async (dispatch) => {
   const response = await streamsApi.put(`/streams${id}`, formValues);
-  const { data: streamData } = response;
+  const { data } = response;
   dispatch({
     type: HANDLE_EDIT_STREAM,
-    payload: { streamData },
+    payload: { data },
   });
 };
 
 export const handleDeleteStream = (id) => async (dispatch) => {
   await streamsApi.delete(`/streams${id}`);
-  const streamId = id;
   dispatch({
     type: HANDLE_DELETE_STREAM,
-    payload: { streamId },
+    payload: { id },
   });
 };

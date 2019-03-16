@@ -1,5 +1,3 @@
-/* Auth Reducer */
-
 import INITIAL_AUTH_STATE from '../fixtures/auth';
 import { HANDLE_SIGN_IN, HANDLE_SIGN_OUT } from '../actions/types';
 

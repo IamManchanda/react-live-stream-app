@@ -38,6 +38,16 @@
   margin-right: 0.5rem;
 }
 
+.button.social.google > .google-text.no-icon {
+  margin: 0.125rem 0.5rem;
+}
+
 .button.radius.social {
   border-radius: 0.25rem;
+}
+
+/* Reset */
+
+.button-group .button {
+  margin-right: .5rem;
 }

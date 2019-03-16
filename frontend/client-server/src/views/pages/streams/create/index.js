@@ -28,10 +28,11 @@ const StreamCreate = class extends Component {
       <form onSubmit={ handleSubmit(this.onStreamCreation) }>
         { streamCreationData.map(function iterateStreamCreationData(item) {
             const { id, name, component: DynFieldComponent, ownProps = {} } = item;
-            return <Field 
-              key={ id } name={ name } 
-              component={ DynFieldComponent } { ...ownProps } 
-            />;
+            return (
+              <Field key={ id } name={ name } 
+                component={ DynFieldComponent } { ...ownProps } 
+              />
+            );
           }) }
         <input type="submit" className="button" value="Submit" />
       </form>

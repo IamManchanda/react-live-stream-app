@@ -8,10 +8,11 @@ const Routes = () =>
     <div className="cell">
       { routesData.map(function iterateRoutesData(item) {
           const { id, path, page: DynRoutedPage, ownProps = {} } = item;
-          return <Route 
-            exact key={ id } path={ path } 
-            render={ (props = {}) => <DynRoutedPage { ...props } { ...ownProps } /> } 
-          />;
+          return (
+            <Route exact key={ id } path={ path } 
+              render={ (props = {}) => <DynRoutedPage { ...props } { ...ownProps } /> } 
+            />
+          );
         }) }
     </div>
   </div>;

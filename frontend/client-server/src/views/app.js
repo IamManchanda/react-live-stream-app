@@ -1,15 +1,16 @@
 import React, { Fragment } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 
 import NavigationHeader from './layouts/navigation-header';
 import Routes from './routes';
+import history from '../history';
 
 const App = () =>
-  <BrowserRouter>
+  <Router history={ history }>
     <Fragment>
       <NavigationHeader />
       <Routes />
     </Fragment>
-  </BrowserRouter>;
+  </Router>;
 
 export default App;
