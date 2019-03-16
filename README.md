@@ -15,6 +15,12 @@ That being said, lot of Styling is either mine or from [Foundation Framework](ht
 
 ## Usage
 
+### Backend - API Server
+
+1. **Open New Terminal Window** & Please `cd` into `backend/api-server` folder and then run `npm install`
+1. Run `npm start` to run this on your local server.
+1. Open [http://localhost:3005/streams](http://localhost:3005/streams) to view the fake api resource powered by `json-server`. We are using this API Server for interacting with our Frontend.
+
 ### Frontend - Client Server
 
 1. **Open New Terminal Window** & Please `cd` into `frontend/client-server` folder and then run `npm install`
