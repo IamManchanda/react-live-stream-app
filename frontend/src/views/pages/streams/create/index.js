@@ -41,6 +41,6 @@ StreamCreate.defaultProps = {
 };
 
 export default reduxForm({
-  form: 'create a stream',
+  form: 'createStream',
   validate: validateForm,
 })(StreamCreate);
