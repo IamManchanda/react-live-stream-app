@@ -13,7 +13,7 @@ const routesData = [
     extraProps: {},
   },
   {
-    path: '/streams/new',
+    path: '/streams/create',
     page: StreamCreate,
     extraProps: {},
   },
