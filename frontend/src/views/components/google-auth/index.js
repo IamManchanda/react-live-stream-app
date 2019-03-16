@@ -53,6 +53,6 @@ const GoogleAuth = class extends Component {
 };
 
 export default connect(
-  ({ authReducer: { hasSignedInState } = {} }) => ({ hasSignedInState }),
+  ({ auth: { hasSignedInState } = {} }) => ({ hasSignedInState }),
   { handleSignIn, handleSignOut }
 )(GoogleAuth);
