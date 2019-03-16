@@ -19,3 +19,4 @@ That being said, lot of Styling is either mine or from [Foundation Framework](ht
 1. Rename the `auth-config-sample` folder to `auth-config`. The `auth-config` is intentionally gitignored so that your (or my) private google credential for this project don't get hacked. Please don't remove the folder from your gitignore.
 1. Run `npm start` to run this on your local server.
 1. Open [http://localhost:3000](http://localhost:3000) to view the frontend part of the app within the browser.
+1. Run `npm run build` if you want to build the frontend up for deployment.
