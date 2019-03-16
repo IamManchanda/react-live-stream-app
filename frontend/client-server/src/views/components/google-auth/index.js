@@ -6,12 +6,12 @@ import { handleSignIn, handleSignOut } from '../../../store/actions';
 
 const GoogleAuth = class extends Component {
   componentDidMount() {
-    window.gapi.load('client:auth2', () => {
+    window.gapi.load('client:auth2', () => { // Non Named callback function because it needs `this` as context.
       const { clientId } = googleCredentials;
       const scope = 'email';
       window.gapi.client
         .init({ clientId, scope })
-        .then(() => {
+        .then(() => { // Non Named callback function because it needs `this` as context.
           this.auth = window.gapi.auth2.getAuthInstance();
           const { isSignedIn } = this.auth;
           this.handleAuthChange(isSignedIn.get());

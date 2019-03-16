@@ -34,7 +34,7 @@ const routesData = [
   },
 ];
 
-routesData.forEach((item) => {
+routesData.forEach(function iterateRoutesData(item) {
   item.id = uuid.v4();
 });
 
