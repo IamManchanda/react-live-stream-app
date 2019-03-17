@@ -12,8 +12,8 @@ const StreamShow = class extends Component {
   }
   
   render() {
-    const { stream, hasSignedInState } = this.props;
-    if (!(hasSignedInState && stream)) return null;
+    const { stream } = this.props;
+    if (!stream) return null;
     return (
       <BaseGrid>
         <BaseGrid.CellHeaderLeft>
@@ -39,13 +39,12 @@ const StreamShow = class extends Component {
 StreamShow.defaultProps = {
   stream: null,
   match: null,
-  hasSignedInState: null,
   handleFetchStream: () => {},
 };
 
 export default connect(
-  ({ streams, auth: { hasSignedInState } = {}  }, { match }) => ({ 
-    stream: streams[match.params.id], hasSignedInState,
+  ({ streams  }, { match }) => ({ 
+    stream: streams[match.params.id],
   }),
   { handleFetchStream },
 )(StreamShow);
