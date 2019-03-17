@@ -1,20 +1,8 @@
 import React, { Component } from 'react';
-import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 
 import { handleCreateStream } from '../../../../store/actions'
-import streamCreationData from './streamCreationData';
-
-const validateForm = (formValues) => {
-  const errors = {};
-  const getErrorContent = (itemName) => 
-    streamCreationData.filter(function filterStreamCreationData(item) {
-      return item.name === itemName;
-    })[0].errorContent;
-  if (!formValues.title) errors.title = getErrorContent('title');
-  if (!formValues.description) errors.description = getErrorContent('description');
-  return errors;
-};
+import StreamForm from '../../../components/stream-form';
 
 const StreamCreate = class extends Component {
   onStreamCreation = (formValues) => {
@@ -23,7 +11,6 @@ const StreamCreate = class extends Component {
   }
 
   render() {
-    const { handleSubmit } = this.props;
     return (
       <div className="grid-x grid-margin-x grid-padding-y">
         <div className="cell medium-12">
@@ -32,17 +19,7 @@ const StreamCreate = class extends Component {
         <div className="cell medium-12 padding-top-0">
           <div className="radius bordered shadow card">
             <div className="card-section">
-              <form onSubmit={ handleSubmit(this.onStreamCreation) }>
-                { streamCreationData.map(function iterateStreamCreationData(item) {
-                    const { uuid, name, component: DynFieldComponent, ownProps = {} } = item;
-                    return (
-                      <Field key={ uuid } name={ name } 
-                        component={ DynFieldComponent } { ...ownProps } 
-                      />
-                    );
-                  }) }
-                <input type="submit" className="button" value="Submit" />
-              </form>
+              <StreamForm handleFormSubmit={ this.onStreamCreation } />
             </div>
           </div>
         </div>
@@ -52,16 +29,10 @@ const StreamCreate = class extends Component {
 };
 
 StreamCreate.defaultProps = {
-  handleSubmit: () => {},
   handleCreateStream: () => {},
 };
-
-const StreamCreateWithReduxForm = reduxForm({
-  form: 'createStream',
-  validate: validateForm,
-})(StreamCreate);
 
 export default connect(
   null,
   { handleCreateStream }
-)(StreamCreateWithReduxForm);
+)(StreamCreate);

@@ -1,9 +1,9 @@
 import uuid from 'uuid';
 
-import FormInputText from '../../../components/form-input/text';
-import FormInputTextarea from '../../../components/form-input/textarea';
+import FormInputText from '../form-input/text';
+import FormInputTextarea from '../form-input/textarea';
 
-const streamCreationData = [
+const streamFormData = [
   {
     name: "title",
     errorContent: "You must enter a Title",
@@ -24,8 +24,8 @@ const streamCreationData = [
   },
 ];
 
-streamCreationData.forEach(function iterateStreamCreationData(item) {
+streamFormData.forEach(function iterateStreamFormData(item) {
   item.uuid = uuid.v4();
 });
 
-export default streamCreationData;
+export default streamFormData;

@@ -12,6 +12,7 @@ const StreamList = class extends Component {
   
   render() {
     const { streams, currentUserId, hasSignedInState } = this.props;
+    if (!streams.length) return null;
     return (
       <div className="grid-x grid-margin-x grid-padding-y">
         <div className="cell medium-6">
