@@ -16,22 +16,18 @@ const StreamList = class extends Component {
     if (!streams.length) return null;
     return (
       <BaseGrid>
-        <BaseGrid.CellHeader>
-          <div className="grid-x grid-margin-x">
-            <div className="cell medium-6">
-              <h3>All Streams</h3>
-            </div>
-            <div className="cell medium-6">
-              { (hasSignedInState) ? <div className="text-right">
-                  <Link type="button" to="/streams/create" 
-                    className="button radius bordered shadow social google">
-                    <span className="google-text no-icon">Create New Stream</span>
-                  </Link>
-                </div> : null }
-            </div>
-          </div> 
-        </BaseGrid.CellHeader>
-        <BaseGrid.CellBody>
+        <BaseGrid.CellHeaderLeft>
+          <h3>All Streams</h3>
+        </BaseGrid.CellHeaderLeft>
+        <BaseGrid.CellHeaderRight>
+          { (hasSignedInState) ? <div className="text-right">
+              <Link type="button" to="/streams/create" 
+                className="button radius bordered shadow social google">
+                <span className="google-text no-icon">Create New Stream</span>
+              </Link>
+            </div> : null }
+        </BaseGrid.CellHeaderRight>
+        <BaseGrid.CellMainContent>
           { streams.map(function iterateStreams(item) {
               const { id, title, description, userId } = item;
               return (
@@ -54,7 +50,7 @@ const StreamList = class extends Component {
                 </div>
               );
             }).reverse() }
-        </BaseGrid.CellBody>
+        </BaseGrid.CellMainContent>
       </BaseGrid>
     );
   }

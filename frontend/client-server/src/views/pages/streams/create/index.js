@@ -15,27 +15,21 @@ const StreamCreate = class extends Component {
   render() {
     return (
       <BaseGrid>
-        <BaseGrid.CellHeader>
-          <div className="grid-x grid-margin-x">
-            <div className="cell medium-6">
-              <h3>Create a New Stream</h3>
-            </div>
-            <div className="cell medium-6">
-              <div className="text-right">
-                <Link type="button" to="/" className="button radius bordered shadow secondary">
-                  Go back to Homepage
-                </Link>
-              </div>
-            </div>
-          </div> 
-        </BaseGrid.CellHeader>
-        <BaseGrid.CellBody>
+        <BaseGrid.CellHeaderLeft>
+        <h3>Create a New Stream</h3>
+        </BaseGrid.CellHeaderLeft>
+        <BaseGrid.CellHeaderRight>
+          <Link type="button" to="/" className="button radius bordered shadow secondary">
+            Go back to Homepage
+          </Link>
+        </BaseGrid.CellHeaderRight>
+        <BaseGrid.CellMainContent>
           <div className="radius bordered shadow card">
             <div className="card-section">
               <StreamForm handleFormSubmit={ this.onStreamCreate } />
             </div>
           </div>
-        </BaseGrid.CellBody>
+        </BaseGrid.CellMainContent>
       </BaseGrid>
     );
   }

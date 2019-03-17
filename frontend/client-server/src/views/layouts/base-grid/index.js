@@ -1,23 +1,33 @@
 import React, { Component } from 'react';
 
-const CellHeader = () => null;
-const CellBody = () => null;
+const CellHeaderLeft = () => null;
+const CellHeaderRight = () => null;
+const CellMainContent = () => null;
 
 const BaseGrid = class extends Component {
-  static CellHeader = CellHeader;
-  static CellBody = CellBody;
+  static CellHeaderLeft = CellHeaderLeft;
+  static CellHeaderRight = CellHeaderRight;
+  static CellMainContent = CellMainContent;
 
   render() {
     const { children } = this.props
-    const cellHeader = children.find(child => child.type === CellHeader);
-    const cellBody = children.find(child => child.type === CellBody);
+    const cellHeaderLeft = children.find(child => child.type === CellHeaderLeft);
+    const cellHeaderRight = children.find(child => child.type === CellHeaderRight);
+    const cellMainContent = children.find(child => child.type === CellMainContent);
     return (
       <div className="grid-x grid-margin-x grid-padding-y">
-        <div className="cell medium-12">
-          { cellHeader ? cellHeader.props.children : null }
+        <div className="cell medium-6">
+          <div className="text-left">
+            { cellHeaderLeft ? cellHeaderLeft.props.children : null }
+          </div>
+        </div>
+        <div className="cell medium-6">
+          <div className="text-right">
+            { cellHeaderRight ? cellHeaderRight.props.children : null }
+          </div>
         </div>
         <div className="cell medium-12 padding-top-0">
-          { cellBody ? cellBody.props.children : null }
+          { cellMainContent ? cellMainContent.props.children : null }
         </div>
       </div>
     );
