@@ -15,12 +15,11 @@ const StreamEdit = class extends Component {
         { (hasSignedInState && stream) ? (
           <div className="grid-x grid-margin-x grid-padding-y">
             <div className="cell medium-12">
-              <h3>Edit this Stream</h3>
+              <h3>Edit Details: { stream.title }</h3>
             </div>
             <div className="cell medium-12 padding-top-0">
               <div className="radius bordered shadow card">
                 <div className="card-section">
-                  <h4>{ stream.title }</h4>
                   <p>{ stream.description }</p>
                 </div>
               </div>
