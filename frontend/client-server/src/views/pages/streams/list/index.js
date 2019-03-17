@@ -41,7 +41,8 @@ const StreamList = class extends Component {
                       { (hasSignedInState && currentUserId === userId) ? <Fragment>
                           <Link type="button" to={ `/streams/${id}/edit` } 
                             className="success radius bordered shadow button">Edit</Link>
-                          <button className="alert radius bordered shadow button">Delete</button>
+                          <Link type="button" to={ `/streams/${id}/delete` } 
+                            className="alert radius bordered shadow button">Delete</Link>
                         </Fragment> : null }
                     </div> 
                   </div>

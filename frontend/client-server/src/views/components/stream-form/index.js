@@ -43,7 +43,9 @@ StreamForm.defaultProps = {
   handleFormSubmit: () => {},
 };
 
-export default reduxForm({
+const StreamFormWithReduxForm = reduxForm({
   form: 'streamForm',
   validate: validateStreamForm,
 })(StreamForm);
+
+export default StreamFormWithReduxForm;

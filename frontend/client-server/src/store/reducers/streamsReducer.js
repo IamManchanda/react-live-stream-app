@@ -1,5 +1,5 @@
-import omit from 'lodash/omit';
-import mapKeys from 'lodash/mapKeys';
+import _omit from 'lodash/omit';
+import _mapKeys from 'lodash/mapKeys';
 
 import {
   HANDLE_FETCH_STREAMS,
@@ -13,13 +13,13 @@ import {
 const streamsReducer = (state = {}, action) => {
   switch (action.type) {
     case HANDLE_FETCH_STREAMS:
-      return { ...state, ...mapKeys(action.payload.data, 'id') };
+      return { ...state, ..._mapKeys(action.payload.data, 'id') };
     case HANDLE_FETCH_STREAM:
     case HANDLE_CREATE_STREAM:
     case HANDLE_EDIT_STREAM:
       return { ...state, [action.payload.data.id]: action.payload.data };
     case HANDLE_DELETE_STREAM:
-      return omit(state, action.payload.id);
+      return _omit(state, action.payload.id);
     default:
       return state;
   }

@@ -1,11 +1,19 @@
 import React, { Fragment, Component } from 'react';
 import { connect } from 'react-redux';
-import { handleFetchStream } from '../../../../store/actions';
+import _pick from 'lodash/pick';
+
+import { handleFetchStream, handleEditStream } from '../../../../store/actions';
+import StreamForm from '../../../components/stream-form';
 
 const StreamEdit = class extends Component {
   componentDidMount() {
     const { handleFetchStream, match } = this.props;
     handleFetchStream(match.params.id);
+  }
+
+  onStreamEdit = (formValues) => {
+    const { handleEditStream, match } = this.props;
+    handleEditStream(match.params.id, formValues);
   }
   
   render() {
@@ -20,8 +28,10 @@ const StreamEdit = class extends Component {
             <div className="cell medium-12 padding-top-0">
               <div className="radius bordered shadow card">
                 <div className="card-section">
-                  <h4>{ stream.title }</h4>
-                  <p>{ stream.description }</p>
+                  <StreamForm 
+                    initialValues={ _pick(stream, 'title', 'description') }
+                    handleFormSubmit={ this.onStreamEdit } 
+                  />
                 </div>
               </div>
             </div>
@@ -37,11 +47,12 @@ StreamEdit.defaultProps = {
   match: null,
   hasSignedInState: null,
   handleFetchStream: () => {},
+  handleEditStream: () => {},
 };
 
 export default connect(
   ({ streams, auth: { hasSignedInState } = {}  }, { match }) => ({ 
     stream: streams[match.params.id], hasSignedInState,
   }),
-  { handleFetchStream },
+  { handleFetchStream, handleEditStream },
 )(StreamEdit);

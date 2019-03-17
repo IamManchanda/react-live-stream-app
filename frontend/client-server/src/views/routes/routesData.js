@@ -28,7 +28,7 @@ const routesData = [
     ownProps: {},
   },
   {
-    path: '/streams/delete',
+    path: '/streams/:id(\\d+)/delete',
     page: StreamDelete,
     ownProps: {},
   },

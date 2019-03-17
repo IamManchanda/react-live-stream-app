@@ -46,8 +46,11 @@
   border-radius: 0.25rem;
 }
 
-/* Reset */
-
+/* Foundation Resets */
 .button-group .button {
   margin-right: .5rem;
+}
+
+.reveal-overlay {
+  background-color: rgba(10,10,10,.75);
 }

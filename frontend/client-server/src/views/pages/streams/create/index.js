@@ -5,7 +5,7 @@ import { handleCreateStream } from '../../../../store/actions'
 import StreamForm from '../../../components/stream-form';
 
 const StreamCreate = class extends Component {
-  onStreamCreation = (formValues) => {
+  onStreamCreate = (formValues) => {
     const { handleCreateStream } = this.props;
     handleCreateStream(formValues);
   }
@@ -19,7 +19,7 @@ const StreamCreate = class extends Component {
         <div className="cell medium-12 padding-top-0">
           <div className="radius bordered shadow card">
             <div className="card-section">
-              <StreamForm handleFormSubmit={ this.onStreamCreation } />
+              <StreamForm handleFormSubmit={ this.onStreamCreate } />
             </div>
           </div>
         </div>

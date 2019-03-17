@@ -55,12 +55,13 @@ export const handleCreateStream = (formValues) => {
 };
 
 export const handleEditStream = (id, formValues) => async (dispatch) => {
-  const response = await streamsApi.put(`/streams/${id}`, formValues);
+  const response = await streamsApi.patch(`/streams/${id}`, formValues);
   const { data } = response;
   dispatch({
     type: HANDLE_EDIT_STREAM,
     payload: { data },
   });
+  history.push('/');
 };
 
 export const handleDeleteStream = (id) => async (dispatch) => {
