@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import _pick from 'lodash/pick';
 
@@ -18,26 +18,23 @@ const StreamEdit = class extends Component {
   
   render() {
     const { stream, hasSignedInState } = this.props;
+    if (!(hasSignedInState && stream)) return null;
     return (
-      <Fragment>
-        { (hasSignedInState && stream) ? (
-          <div className="grid-x grid-margin-x grid-padding-y">
-            <div className="cell medium-12">
-              <h3>Edit Your Stream</h3>
-            </div>
-            <div className="cell medium-12 padding-top-0">
-              <div className="radius bordered shadow card">
-                <div className="card-section">
-                  <StreamForm 
-                    initialValues={ _pick(stream, 'title', 'description') }
-                    handleFormSubmit={ this.onStreamEdit } 
-                  />
-                </div>
-              </div>
+      <div className="grid-x grid-margin-x grid-padding-y">
+        <div className="cell medium-12">
+          <h3>Edit Your Stream</h3>
+        </div>
+        <div className="cell medium-12 padding-top-0">
+          <div className="radius bordered shadow card">
+            <div className="card-section">
+              <StreamForm 
+                initialValues={ _pick(stream, 'title', 'description') }
+                handleFormSubmit={ this.onStreamEdit } 
+              />
             </div>
           </div>
-          ) : null }
-      </Fragment>
+        </div>
+      </div>
     );
   }
 };

@@ -15,16 +15,20 @@ const StreamList = class extends Component {
     if (!streams.length) return null;
     return (
       <div className="grid-x grid-margin-x grid-padding-y">
-        <div className="cell medium-6">
-          <h3>All Streams</h3>
-        </div>
-        <div className="cell medium-6">
-          { (hasSignedInState) ? <div className="text-right">
-              <Link type="button" to="/streams/create" 
-                className="button radius bordered shadow social google">
-                <span className="google-text no-icon">Create New Stream</span>
-              </Link>
-            </div> : null }
+        <div className="cell medium-12">
+          <div className="grid-x grid-margin-x">
+            <div className="cell medium-6">
+              <h3>All Streams</h3>
+            </div>
+            <div className="cell medium-6">
+              { (hasSignedInState) ? <div className="text-right">
+                  <Link type="button" to="/streams/create" 
+                    className="button radius bordered shadow social google">
+                    <span className="google-text no-icon">Create New Stream</span>
+                  </Link>
+                </div> : null }
+            </div>
+          </div> 
         </div>
         <div className="cell medium-12 padding-top-0">
           { streams.map(function iterateStreams(item) {

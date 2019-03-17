@@ -70,4 +70,5 @@ export const handleDeleteStream = (id) => async (dispatch) => {
     type: HANDLE_DELETE_STREAM,
     payload: { id },
   });
+  history.push('/');
 };

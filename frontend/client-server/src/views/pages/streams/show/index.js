@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { handleFetchStream } from '../../../../store/actions';
 
@@ -10,23 +10,20 @@ const StreamShow = class extends Component {
   
   render() {
     const { stream, hasSignedInState } = this.props;
+    if (!(hasSignedInState && stream)) return null;
     return (
-      <Fragment>
-        { (hasSignedInState && stream) ? (
-          <div className="grid-x grid-margin-x grid-padding-y">
-            <div className="cell medium-12">
-              <h3>{ stream.title }</h3>
-            </div>
-            <div className="cell medium-12 padding-top-0">
-              <div className="radius bordered shadow card">
-                <div className="card-section">
-                  <p>{ stream.description }</p>
-                </div>
-              </div>
+      <div className="grid-x grid-margin-x grid-padding-y">
+        <div className="cell medium-12">
+          <h3>{ stream.title }</h3>
+        </div>
+        <div className="cell medium-12 padding-top-0">
+          <div className="radius bordered shadow card">
+            <div className="card-section">
+              <p>{ stream.description }</p>
             </div>
           </div>
-          ) : null }
-      </Fragment>
+        </div>
+      </div>
     );
   }
 };

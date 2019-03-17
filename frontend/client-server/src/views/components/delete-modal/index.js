@@ -10,7 +10,7 @@ const DeleteModal = ({ title, content, actionsMarkup, handleDismiss }) => {
           onClick={ (event) => event.stopPropagation() }>
           <h2>{ title }</h2>
           <p className="lead">{ content }</p>
-          <div className="button-group">{ actionsMarkup }</div>
+          { actionsMarkup }
         </div>
         <button className="close-button" aria-label="Close Delete Modal" type="button">
           <span aria-hidden="true">&times;</span>
