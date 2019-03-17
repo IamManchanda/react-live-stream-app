@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "API Server for live stream app in react",
   "private": true,
-  "main": "index.js",
   "scripts": {
     "start": "json-server -p 3005 -w data/db.json"
   },

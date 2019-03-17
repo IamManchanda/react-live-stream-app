@@ -46,7 +46,6 @@
   border-radius: 0.25rem;
 }
 
-/* Foundation Resets */
 .button-group .button {
   margin-right: .5rem;
 }
@@ -62,4 +61,9 @@ a.dark-link {
 a.dark-link:hover,
 a.dark-link:focus {
   color: inherit;
+}
+
+.video-container {
+  margin-top: 0.5rem;
+  width: 100%;
 }

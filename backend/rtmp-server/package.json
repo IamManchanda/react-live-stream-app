@@ -1,0 +1,12 @@
+{
+  "name": "rtmp-server",
+  "version": "1.0.0",
+  "description": "RTMP Server for live stream app in react",
+  "private": true,
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "node-media-server": "^1.4.12"
+  }
+}

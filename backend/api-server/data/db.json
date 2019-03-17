@@ -28,6 +28,12 @@
       "title": "My Another Test Stream Boom",
       "userId": "104186168227884043546",
       "id": 7
+    },
+    {
+      "title": "My New Test Stream",
+      "description": "Woah!",
+      "userId": "104186168227884043546",
+      "id": 8
     }
   ]
 }
