@@ -54,3 +54,12 @@
 .reveal-overlay {
   background-color: rgba(10,10,10,.75);
 }
+
+a.dark-link {
+  color: #0a0a0a;
+}
+
+a.dark-link:hover,
+a.dark-link:focus {
+  color: inherit;
+}

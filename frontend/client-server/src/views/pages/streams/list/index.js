@@ -33,8 +33,10 @@ const StreamList = class extends Component {
               return (
                 <div className="radius bordered shadow card" key={ id }>
                   <div className="card-section">
-                    <h4>{ title }</h4>
-                    <p>{ description }</p>
+                    <Link to={ `/streams/${id}` } className="dark-link">
+                      <h4>{ title }</h4>
+                      <p>{ description }</p>
+                    </Link>
                     <div className="button-group">
                       <Link
                         type="button" to={ `/streams/${id}` } 
