@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+
+import BaseGrid from '../../../layouts/base-grid';
 import { handleFetchStream } from '../../../../store/actions';
 
 const StreamShow = class extends Component {
@@ -12,18 +15,29 @@ const StreamShow = class extends Component {
     const { stream, hasSignedInState } = this.props;
     if (!(hasSignedInState && stream)) return null;
     return (
-      <div className="grid-x grid-margin-x grid-padding-y">
-        <div className="cell medium-12">
-          <h3>{ stream.title }</h3>
-        </div>
-        <div className="cell medium-12 padding-top-0">
+      <BaseGrid>
+        <BaseGrid.CellHeader>
+          <div className="grid-x grid-margin-x">
+            <div className="cell medium-6">
+              <h3>{ stream.title }</h3>
+            </div>
+            <div className="cell medium-6">
+              <div className="text-right">
+                <Link type="button" to="/" className="button radius bordered shadow secondary">
+                  Go back to Homepage
+                </Link>
+              </div>
+            </div>
+          </div> 
+        </BaseGrid.CellHeader>
+        <BaseGrid.CellBody>
           <div className="radius bordered shadow card">
             <div className="card-section">
               <p>{ stream.description }</p>
             </div>
           </div>
-        </div>
-      </div>
+        </BaseGrid.CellBody>
+      </BaseGrid>
     );
   }
 };

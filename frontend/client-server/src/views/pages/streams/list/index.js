@@ -2,6 +2,7 @@ import React, { Fragment, Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import BaseGrid from '../../../layouts/base-grid';
 import { handleFetchStreams } from '../../../../store/actions';
 
 const StreamList = class extends Component {
@@ -14,8 +15,8 @@ const StreamList = class extends Component {
     const { streams, currentUserId, hasSignedInState } = this.props;
     if (!streams.length) return null;
     return (
-      <div className="grid-x grid-margin-x grid-padding-y">
-        <div className="cell medium-12">
+      <BaseGrid>
+        <BaseGrid.CellHeader>
           <div className="grid-x grid-margin-x">
             <div className="cell medium-6">
               <h3>All Streams</h3>
@@ -29,8 +30,8 @@ const StreamList = class extends Component {
                 </div> : null }
             </div>
           </div> 
-        </div>
-        <div className="cell medium-12 padding-top-0">
+        </BaseGrid.CellHeader>
+        <BaseGrid.CellBody>
           { streams.map(function iterateStreams(item) {
               const { id, title, description, userId } = item;
               return (
@@ -53,8 +54,8 @@ const StreamList = class extends Component {
                 </div>
               );
             }).reverse() }
-        </div>
-      </div>
+        </BaseGrid.CellBody>
+      </BaseGrid>
     );
   }
 };

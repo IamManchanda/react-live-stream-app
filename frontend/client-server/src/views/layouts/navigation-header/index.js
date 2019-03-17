@@ -1,14 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import GoogleAuth from '../../components/google-auth'
 
 const NavigationHeader = () => 
   <div className="top-bar shadow">
     <div className="top-bar-left">
-      <ul className="dropdown menu">
+      <ul className="menu">
         <li className="menu-text">Live Stream App</li>
-        <li><Link to="/">Homepage</Link></li>
       </ul>
     </div>
     <div className="top-bar-right">

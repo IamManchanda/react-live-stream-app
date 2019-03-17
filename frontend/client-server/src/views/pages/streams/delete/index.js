@@ -2,6 +2,7 @@ import React, { Fragment, Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import BaseGrid from '../../../layouts/base-grid';
 import DeleteModal from '../../../components/delete-modal';
 import history from '../../../../history';
 import { handleFetchStream, handleDeleteStream } from '../../../../store/actions'; 
@@ -39,18 +40,29 @@ const StreamDelete = class extends Component {
           ) }
           handleDismiss={ () => history.push('/') }
         />
-        <div className="grid-x grid-margin-x grid-padding-y">
-          <div className="cell medium-12">
-            <h3>{ stream.title }</h3>
-          </div>
-          <div className="cell medium-12 padding-top-0">
+        <BaseGrid>
+          <BaseGrid.CellHeader>
+            <div className="grid-x grid-margin-x">
+              <div className="cell medium-6">
+                <h3>{ stream.title }</h3>
+              </div>
+              <div className="cell medium-6">
+                <div className="text-right">
+                  <Link type="button" to="/" className="button radius bordered shadow secondary">
+                    Go back to Homepage
+                  </Link>
+                </div>
+              </div>
+            </div> 
+          </BaseGrid.CellHeader>
+          <BaseGrid.CellBody>
             <div className="radius bordered shadow card">
               <div className="card-section">
                 <p>{ stream.description }</p>
               </div>
             </div>
-          </div>
-        </div>
+          </BaseGrid.CellBody>
+        </BaseGrid>
       </Fragment>
     );
   };
