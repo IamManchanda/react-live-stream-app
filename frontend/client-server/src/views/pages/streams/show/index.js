@@ -17,7 +17,7 @@ const StreamShow = class extends Component {
     return (
       <BaseGrid>
         <BaseGrid.CellHeaderLeft>
-          <h3>{ stream.title }</h3>
+          <h3>View your Stream</h3>
         </BaseGrid.CellHeaderLeft>
         <BaseGrid.CellHeaderRight>
           <Link type="button" to="/" className="button radius bordered shadow secondary">
@@ -27,6 +27,7 @@ const StreamShow = class extends Component {
         <BaseGrid.CellMainContent>
           <div className="radius bordered shadow card">
             <div className="card-section">
+              <h4>{ stream.title }</h4>
               <p>{ stream.description }</p>
             </div>
           </div>
