@@ -25,17 +25,28 @@ const StreamCreate = class extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <form onSubmit={ handleSubmit(this.onStreamCreation) }>
-        { streamCreationData.map(function iterateStreamCreationData(item) {
-            const { uuid, name, component: DynFieldComponent, ownProps = {} } = item;
-            return (
-              <Field key={ uuid } name={ name } 
-                component={ DynFieldComponent } { ...ownProps } 
-              />
-            );
-          }) }
-        <input type="submit" className="button" value="Submit" />
-      </form>
+      <div className="grid-x grid-margin-x grid-padding-y">
+        <div className="cell medium-12">
+          <h3>Create a New Stream</h3>
+        </div>
+        <div className="cell medium-12 padding-top-0">
+          <div className="radius bordered shadow card">
+            <div className="card-section">
+              <form onSubmit={ handleSubmit(this.onStreamCreation) }>
+                { streamCreationData.map(function iterateStreamCreationData(item) {
+                    const { uuid, name, component: DynFieldComponent, ownProps = {} } = item;
+                    return (
+                      <Field key={ uuid } name={ name } 
+                        component={ DynFieldComponent } { ...ownProps } 
+                      />
+                    );
+                  }) }
+                <input type="submit" className="button" value="Submit" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     );
   }
 };

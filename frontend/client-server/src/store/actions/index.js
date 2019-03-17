@@ -33,7 +33,7 @@ export const handleFetchStreams = () => async (dispatch) => {
 };
 
 export const handleFetchStream = (id) => async (dispatch) => {
-  const response = await streamsApi.get(`/streams${id}`);
+  const response = await streamsApi.get(`/streams/${id}`);
   const { data } = response;
   dispatch({
     type: HANDLE_FETCH_STREAM,
@@ -55,7 +55,7 @@ export const handleCreateStream = (formValues) => {
 };
 
 export const handleEditStream = (id, formValues) => async (dispatch) => {
-  const response = await streamsApi.put(`/streams${id}`, formValues);
+  const response = await streamsApi.put(`/streams/${id}`, formValues);
   const { data } = response;
   dispatch({
     type: HANDLE_EDIT_STREAM,
@@ -64,7 +64,7 @@ export const handleEditStream = (id, formValues) => async (dispatch) => {
 };
 
 export const handleDeleteStream = (id) => async (dispatch) => {
-  await streamsApi.delete(`/streams${id}`);
+  await streamsApi.delete(`/streams/${id}`);
   dispatch({
     type: HANDLE_DELETE_STREAM,
     payload: { id },
